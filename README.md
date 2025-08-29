@@ -174,6 +174,8 @@ Developed a Flask web interface with dynamic search, category, and country filte
 
 Included support for limiting the number of returned headlines.
 
+Added Dark Mode on Web UI with toggle.
+
 
 
 ## License
