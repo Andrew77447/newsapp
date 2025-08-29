@@ -2,4 +2,4 @@ newsdataapi
 rich
 flask
 python-dotenv
-requests
+cachelib

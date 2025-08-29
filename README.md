@@ -49,7 +49,7 @@ git clone https://github.com/renzorlive/newsapp.git
 
 python -m venv venv
 
-
+```
 # On Windows
 
 
@@ -62,7 +62,7 @@ venv\Scripts\activate
 source venv/bin/activate
 
 
-```
+
 
 3. **Install dependencies**
 ```
@@ -160,7 +160,25 @@ pip install -r requirements.txt
 ```
 
 
----
+## Updates and Refactorings
+
+Refactored code structure for better readability and maintainability.
+
+Added caching using cachelib.SimpleCache to reduce unnecessary API calls.
+
+Improved date formatting for news articles to a user-friendly format.
+
+Added validation for news categories and country codes.
+
+Implemented error handling for API communication issues.
+
+Enhanced terminal output using rich for better visualization.
+
+Developed a Flask web interface with dynamic search, category, and country filters.
+
+Included support for limiting the number of returned headlines.
+
+
 
 ## License
 

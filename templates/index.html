@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>News Headlines</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 2rem; background-color: #f4f4f9; color: #333; }
+        .container { max-width: 800px; margin: auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1, h2 { color: #1a1a1a; }
+        form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+        form .full-width { grid-column: 1 / -1; }
+        label { font-weight: bold; margin-bottom: 0.25rem; display: block; }
+        input, select, button { width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #007acc; color: white; font-weight: bold; border: none; cursor: pointer; transition: background-color 0.2s; }
+        button:hover { background-color: #005f99; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #eee; }
+        li:last-child { border-bottom: none; }
+        a { font-size: 1.2em; color: #007acc; text-decoration: none; font-weight: 600; }
+        a:hover { text-decoration: underline; }
+        .meta { color: #555; font-size: 0.9em; margin-top: 0.25rem; }
+        .error { color: #d8000c; background-color: #ffbaba; border: 1px solid #d8000c; padding: 1rem; border-radius: 4px; margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search News Headlines 🔎</h1>
+        <form method="GET" action="/">
+            <div class="full-width">
+                <label for="q">Search Keyword:</label>
+                <input type="text" id="q" name="q" value="{{ params.q or '' }}" placeholder="e.g., Artificial Intelligence">
+            </div>
+            <div>
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="">All</option>
+                    {% for cat in valid_categories %}
+                    <option value="{{ cat }}" {% if params.category == cat %}selected{% endif %}>{{ cat.title() }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option value="">Any</option>
+                    {% for code in valid_countries %}
+                    <option value="{{ code }}" {% if params.country == code %}selected{% endif %}>{{ code.upper() }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="full-width">
+                <button type="submit">Search</button>
+            </div>
+        </form>
+
+        {% if error %}
+            <div class="error"><strong>Error:</strong> {{ error }}</div>
+        {% elif articles %}
+            <h2>Results</h2>
+            <ul>
+                {% for article in articles %}
+                <li>
+                    <a href="{{ article.link }}" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
+                    <div class="meta">
+                        <strong>Source:</strong> {{ article.source_id or 'Unknown' }} |
+                        <strong>Published:</strong> {{ article.pubDate_formatted or 'N/A' }}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No news articles found matching your criteria. Try a different search!</p>
+        {% endif %}
+    </div>
+</body>
+</html>
