@@ -8,8 +8,12 @@ Inspired by [wttr.in](https://github.com/chubin/wttr.in)\
 [![Rich](https://img.shields.io/badge/rich-10.x-green?logo=python&logoColor=white)](https://github.com/Textualize/rich)
 [![NewsData.io](https://img.shields.io/badge/NewsData.io-API-blueviolet)](https://newsdata.io/)
 ---
-
+# Terminal
 ![NewsApp](img/ss.png "Screenshot for the NewsApp")
+
+# Web UI
+![NewsAppWeb](img/ssweb.png "Screenshot for the NewsAppWeb")
+
 
 
 ## Features
