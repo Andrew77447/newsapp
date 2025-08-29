@@ -136,10 +136,14 @@ You can customize the URL parameters as needed.
 
 ## Project Structure
 
-- `newsapp.py` — main application script containing terminal and web UI.
-- `.env` — environment file storing your API key (not included in repo).
-- `requirements.txt` — Python dependencies file.
-
+```
+.
+├── newsapp.py         — main application script containing terminal and web UI.
+├── templates/ 
+│   └── index.html     - Template for web page 
+├── .env               - environment file storing your API key (not included in repo). 
+└── requirements.txt   - Python dependencies file. 
+```
 ---
 
 ## Dependencies
