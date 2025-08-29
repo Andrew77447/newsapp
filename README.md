@@ -38,8 +38,7 @@ Inspired by [wttr.in](https://github.com/chubin/wttr.in)\
 ```
 
 
-git clone [https://github.com/renzorlive/newsapp.git](https://github.com/renzorlive/newsapp.git)
-cd newsapp
+git clone https://github.com/renzorlive/newsapp.git
 
 
 ```
