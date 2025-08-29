@@ -1,0 +1,9 @@
+# Ignore Python cache and environment files
+__pycache__/
+*.py[cod]
+
+# Ignore your local environment settings
+.env
+
+# Ignore virtual environment folder (optional, if you create venv inside project)
+venv/
