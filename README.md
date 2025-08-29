@@ -47,19 +47,19 @@ git clone https://github.com/renzorlive/newsapp.git
 ```
 
 
-python -m venv venv
+    python -m venv venv
 
 ```
 # On Windows
 
 
-venv\Scripts\activate
+    venv\Scripts\activate
 
 
 # On Unix or MacOS
 
 
-source venv/bin/activate
+    source venv/bin/activate
 
 
 
@@ -74,13 +74,10 @@ pip install -r requirements.txt
 ```
 
 4. **Create a `.env` file with your NewsData.io API key**
-```
 
 
-echo "NEWSDATA_API_KEY=your_actual_api_key_here" > .env
+    echo "NEWSDATA_API_KEY=your_actual_api_key_here" > .env
 
-
-```
 
 
 ---
@@ -91,13 +88,11 @@ echo "NEWSDATA_API_KEY=your_actual_api_key_here" > .env
 
 Fetch news headlines and display them in your terminal with rich formatting.
 
-```
 
 
-python newsapp.py --category technology --language en --country us --limit 10
+    python newsapp.py --category technology --language en --country us --limit 10
 
 
-```
 
 **Options:**
 
@@ -105,6 +100,7 @@ python newsapp.py --category technology --language en --country us --limit 10
 - `--language`: Language code (default: en)
 - `--country`: Country code (2-letter ISO code, e.g., us, gb, ro)
 - `--limit`: Number of headlines to fetch (default: 10, max: 100)
+- `--q`: Keyword
 
 ---
 
@@ -209,6 +205,5 @@ If you enjoy using this app, please consider buying me a coffee!
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-%23FF813F?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white)](https://buymeacoffee.com/renzorlive)
 
-```
 
 
